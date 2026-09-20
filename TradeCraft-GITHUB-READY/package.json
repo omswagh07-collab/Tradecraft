@@ -1,0 +1,8 @@
+{
+  "name":"tradecraft-market-sprint",
+  "version":"3.0.0",
+  "private":true,
+  "description":"TradeCraft Market Sprint event platform",
+  "scripts":{"start":"node server.js","dev":"node server.js"},
+  "engines":{"node":">=20"}
+}

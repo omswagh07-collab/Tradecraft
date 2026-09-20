@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "eventName": "Market Sprint · Fictional Markets Edition",
+    "status": "lobby",
+    "tick": 0,
+    "maxTicks": 96,
+    "secondsPerTick": 75,
+    "startedAt": null,
+    "closedAt": null,
+    "headlineCount": 0
+  },
+  "users": [],
+  "teams": [],
+  "prices": {
+    "TAVR": 84.5,
+    "AERV": 42.8,
+    "VLTN": 126.4,
+    "BRKW": 58.9,
+    "LMRA": 71.2,
+    "GRFD": 95.6
+  },
+  "history": [],
+  "orders": [],
+  "pending": [],
+  "news": [],
+  "audit": [],
+  "locks": {}
+}

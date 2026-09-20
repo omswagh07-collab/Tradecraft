@@ -1,0 +1,55 @@
+TRADECRAFT ACM-W — GITHUB + RENDER + NETLIFY QUICK START
+
+THIS FOLDER IS ALREADY GITHUB-READY.
+Upload the CONTENTS of this folder to the ROOT of your GitHub repository.
+Do NOT create an extra TradeCraft-ACMW-PRO folder inside the repository.
+
+GitHub root must contain:
+  package.json
+  package-lock.json
+  server.js
+  public/
+  private/
+  scripts/
+  data.json
+  render.yaml
+  netlify.toml
+
+1) GITHUB
+Upload every file/folder in this ZIP to the repository root.
+The final GitHub URL should show package.json directly at the top level.
+
+2) RENDER BACKEND
+Create/use a Node Web Service connected to this GitHub repository.
+Root Directory: leave EMPTY
+Build Command: npm install
+Start Command: npm start
+Health Check Path: /api/health
+
+Set these environment variables in Render:
+NODE_ENV=production
+ADMIN_EMAIL=<your organizer admin email>
+ADMIN_PASSWORD=<your organizer admin password>
+FRONTEND_ORIGIN=https://YOUR-NETLIFY-SITE.netlify.app
+DATA_FILE=/var/data/data.json
+
+If you are using a Render persistent disk, mount it at /var/data.
+If you do not use a disk, the app can run but its data can reset when the service restarts/redeploys.
+
+3) NETLIFY FRONTEND
+Connect the same GitHub repository to Netlify.
+Build command: node scripts/write-config.js
+Publish directory: public
+Environment variable:
+TRADECRAFT_API_BASE=https://YOUR-RENDER-BACKEND.onrender.com
+
+4) IMPORTANT
+Do NOT put ADMIN_PASSWORD in public/config.js.
+Do NOT commit .env files.
+private/engine.json is backend-only and should never be deployed as a separate static site.
+
+5) AFTER DEPLOYMENT
+Open the Render health URL:
+https://YOUR-RENDER-BACKEND.onrender.com/api/health
+It should return JSON containing ok:true.
+Then open the Netlify site and test Admin Login.
